@@ -12,6 +12,10 @@
 
 #### Purpose: To align reads to ref genome and count them 
 
+#create sh file for slurm script 
+nano mapping_job.sh
+
+#creating parameters and activating anaconda/colsa 
 #!/bin/bash
 #SBATCH --partition=macmanes
 #SBATCH --cpus-per-task=40
