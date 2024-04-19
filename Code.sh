@@ -32,12 +32,12 @@ module load linuxbrew/colsa
 
 fastqc /mnt/lz01/macmaneslab/shared/hypothalamus_seq/raw_reads/*fastq.gz -t 40 -o /mnt/lz01/macmaneslab/smc1079/fastq
 
-#getting qc html files and transferring to local device 
+#getting qc html files and downloading to local device 
 get /mnt/lz01/macmaneslab/smc1079/fastq/*.html
+
 
 #making directory for multiqc
 mkdir multiqc
-
 
 #multiqc script 
 #!/bin/bash
@@ -55,7 +55,8 @@ conda activate multiqc-1.10.1
 
 multiqc /mnt/lz01/macmaneslab/sj1187/hypothalamus/mapping/fastq/*fastqc* -o /mnt/lz01/macmaneslab/smc1079/multiqc
 
-
+#getting and downloading multiqc html files to local device 
+get /mnt/lz01/macmaneslab/smc1079/fastq/*.html
 
 #create sh file for mapping slurm script 
 nano mapping_job.sh
