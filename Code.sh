@@ -12,7 +12,44 @@
 
 #### Purpose: To align reads to ref genome and count them 
 
-#create sh file for slurm script 
+
+#fastqc slurm script 
+
+#!/bin/bash
+
+
+#SBATCH --partition=macmanes
+#SBATCH --cpus-per-task=40
+#SBATCH --mem 310Gb
+#SBATCH --open-mode=append
+#SBATCH --exclude=node117,node118,node139
+#SBATCH --output fastq_data.log
+
+module load linuxbrew/colsa
+
+fastqc /mnt/lz01/macmaneslab/shared/hypothalamus_seq/raw_reads/*fastq.gz -t 40 -o /mnt/lz01/macmaneslab/sj1187/hypothalamus/mapping/fastq
+
+
+#multiqc script 
+
+#!/bin/bash
+
+#SBATCH --partition=macmanes
+#SBATCH --cpus-per-task=40
+#SBATCH --mem 310Gb
+#SBATCH --open-mode=append
+#SBATCH --exclude=node117,node118,node139
+#SBATCH --output multiqc_data.log
+ 
+module unload linuxbrew/colsa
+module load anaconda/colsa
+conda activate multiqc-1.10.1
+
+multiqc /mnt/lz01/macmaneslab/sj1187/hypothalamus/mapping/fastq/*fastqc* -o /mnt/lz01/macmaneslab/sj1187/hypothalamus/mapping/multiqc
+
+
+
+#create sh file for mapping slurm script 
 nano mapping_job.sh
 
 #creating parameters and activating anaconda/colsa 
