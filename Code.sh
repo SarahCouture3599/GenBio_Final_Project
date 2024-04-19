@@ -32,6 +32,8 @@ module load linuxbrew/colsa
 
 fastqc /mnt/lz01/macmaneslab/shared/hypothalamus_seq/raw_reads/*fastq.gz -t 40 -o /mnt/lz01/macmaneslab/smc1079/fastq
 
+#getting qc html files and transferring to local device 
+get /mnt/lz01/macmaneslab/smc1079/fastq/*.html
 
 #making directory for multiqc
 mkdir multiqc
