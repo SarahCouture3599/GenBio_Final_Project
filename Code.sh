@@ -13,10 +13,13 @@
 #### Purpose: To align reads to ref genome and count them 
 
 
+#making directory for fastqc results
+mkdir fastqc
+
+
 #fastqc slurm script 
 
 #!/bin/bash
-
 
 #SBATCH --partition=macmanes
 #SBATCH --cpus-per-task=40
@@ -27,11 +30,14 @@
 
 module load linuxbrew/colsa
 
-fastqc /mnt/lz01/macmaneslab/shared/hypothalamus_seq/raw_reads/*fastq.gz -t 40 -o /mnt/lz01/macmaneslab/sj1187/hypothalamus/mapping/fastq
+fastqc /mnt/lz01/macmaneslab/shared/hypothalamus_seq/raw_reads/*fastq.gz -t 40 -o /mnt/lz01/macmaneslab/smc1079/fastq
+
+
+#making directory for multiqc
+mkdir multiqc
 
 
 #multiqc script 
-
 #!/bin/bash
 
 #SBATCH --partition=macmanes
@@ -45,7 +51,7 @@ module unload linuxbrew/colsa
 module load anaconda/colsa
 conda activate multiqc-1.10.1
 
-multiqc /mnt/lz01/macmaneslab/sj1187/hypothalamus/mapping/fastq/*fastqc* -o /mnt/lz01/macmaneslab/sj1187/hypothalamus/mapping/multiqc
+multiqc /mnt/lz01/macmaneslab/sj1187/hypothalamus/mapping/fastq/*fastqc* -o /mnt/lz01/macmaneslab/smc1079/multiqc
 
 
 
