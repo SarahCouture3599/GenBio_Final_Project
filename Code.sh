@@ -157,15 +157,46 @@ do awk '{print $1, "\t", $NF}' $samples > count_data/$samples;
 done
 
 #to make parsing in R easier - changing files names 
-cd count_data
-
-for filename in *counts; do                  
-    [ -f "$filename" ] || continue
-    mv "$filename" "${filename/MP/_male_pit}"
-    mv "$filename" "${filename/FP/_female_pit}"
-    mv "$filename" "${filename/FS/_female_sonpvn}"
-    mv "$filename" "${filename/MS/_male_sonpvn}"
-done
+mv "1318FP_S28_L002_gene.counts" "1318_female_pit_no_S28_L002_gene.counts"
+mv "1318FS_S27_L002_gene.counts" "1318_female_sonpvn_no_S27_L002_gene.counts"
+mv "1327FP_S30_L002_gene.counts" "1327_female_pit_no_S30_L002_gene.counts"
+mv "1327FS_S29_L002_gene.counts" "1327_female_sonpvn_no_S29_L002_gene.counts"
+mv "1331MP_S32_L002_gene.counts" "1331_male_pit_no_S32_L002_gene.counts"
+mv "1331MS_S31_L002_gene.counts" "1331_male_sonpvn_no_S31_L002_gene.counts"
+mv "1365MP_S38_L002_gene.counts" "1365_male_pit_no_S38_L002_gene.counts"
+mv "1365MS_S37_L002_gene.counts" "1365_male_sonpvn_no_S37_L002_gene.counts"
+mv "1368MP_S36_L002_gene.counts" "1368_male_pit_no_S36_L002_gene.counts"
+mv "1368MS_S35_L002_gene.counts" "1368_male_sonpvn_no_S35_L002_gene.counts"
+mv "1369MP_S40_L002_gene.counts" "1369_male_pit_no_S40_L002_gene.counts"
+mv "1369MS_S39_L002_gene.counts" "1369_male_sonpvn_no_S40_L002_gene.counts"
+mv "1370FP_S26_L002_gene.counts" "1370_female_pit_no_S26_L002_gene.counts"
+mv "1370FS_S25_L002_gene.counts" "1370_female_sonpvn_no_S25_L002_gene.counts"
+mv "1372FP_S24_L002_gene.counts" "1372_female_pit_no_S24_L002_gene.counts"
+mv "1372FS_S23_L002_gene.counts" "1372_female_sonpvn_no_S23_L002_gene.counts"
+mv "1373FP_S22_L002_gene.counts" "1373_female_pit_no_S22_L002_gene.counts"
+mv "1373FS_S21_L002_gene.counts" "1373_female_sonpvn_no_S21_L002_gene.counts"
+mv "1374MP_S34_L002_gene.counts" "1374_male_pit_no_S34_L002_gene.counts"
+mv "1374MS_S33_L002_gene.counts" "1374_male_sonpvn_no_S33_L002_gene.counts"
+mv "1381FP_S2_L002_gene.counts" "1381_female_pit_yes_S2_L002_gene.counts"
+mv "1381FS_S1_L002_gene.counts" "1381_female_sonpvn_yes_S1_L002_gene.counts"
+mv "1384FP_S4_L002_gene.counts" "1384_female_pit_yes_S4_L002_gene.counts"
+mv "1384FS_S3_L002_gene.counts" "1384_female_sonpvn_yes_S3_L002_gene.counts"
+mv "1386MP_S14_L002_gene.counts" "1386_male_pit_yes_S14_L002_gene.counts"
+mv "1386MS_S13_L002_gene.counts" "1386_male_sonpvn_yes_S13_L002_gene.counts"
+mv "1619MP_S12_L002_gene.counts" "1619_male_pit_yes_S12_L002_gene.counts"
+mv "1619MS_S11_L002_gene.counts" "1619_male_sonpvn_yes_S11_L002_gene.counts"
+mv "1620MP_S16_L002_gene.counts" "1620_male_pit_yes_S16_L002_gene.counts"
+mv "1620MS_S15_L002_gene.counts" "1620_male_sonpvn_yes_S15_L002_gene.counts"
+mv "1638MP_S18_L002_gene.counts" "1638_male_pit_yes_S18_L002_gene.counts"
+mv "1638MS_S17_L002_gene.counts" "1638_male_sonpvn_yes_S17_L002_gene.counts"
+mv "1639MP_S20_L002_gene.counts" "1639_male_pit_yes_S20_L002_gene.counts"
+mv "1639MS_S19_L002_gene.counts" "1639_male_sonpvn_yes_S19_L002_gene.counts"
+mv "1640FP_S6_L002_gene.counts" "1640_female_pit_yes_S6_L002_gene.counts"
+mv "1640FS_S5_L002_gene.counts" "1640_female_sonpvn_yes_S5_L002_gene.counts"
+mv "1641FP_S8_L002_gene.counts" "1641_female_pit_yes_S8_L002_gene.counts"
+mv "1641FS_S7_L002_gene.counts" "1641_female_sonpvn_S7_L002_gene.counts"
+mv "1642FP_S10_L002_gene.counts" "1642_female_pit_yes_S10_L002_gene.counts"
+mv "1642FS_S9_L002_gene.counts" "1642_female_sonpvn_S9_L002_gene.counts"
 
 #running slurm script for mapping ~20 hours 
 sbatch mapping_job.sh /mnt/lz01/macmaneslab/shared/STAR_index/ /mnt/lz01/macmaneslab/shared/hypothalamus_seq/raw_reads ~/RESULTS_DIR/results
