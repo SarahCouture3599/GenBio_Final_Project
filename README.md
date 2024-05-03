@@ -45,3 +45,17 @@ Raw reads then went through quality control and multiqc platforms, followed by t
 
 
 [![](./pheatmap.png)]([https://github.com/SarahCouture3599/GenBio_Final_Project/blob/main/pheatmap.png]
+
+
+
+## Discussion 
+
+
+## Future Directions 
+
+
+## Acknowledgments 
+
+
+## References 
+
