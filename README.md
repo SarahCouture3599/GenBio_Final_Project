@@ -1,12 +1,18 @@
 # GenBio_Final_Project
+Sarah Couture
 
 ## Study Background 
-- this is what I did
-- Then I did this 
+
+ 
 
 ## Methods 
 
+
+
+
 ## Results 
+
+
 
 [![](./sampletable.png)](https://github.com/SarahCouture3599/GenBio_Final_Project/blob/main/sampletable.png)
 
