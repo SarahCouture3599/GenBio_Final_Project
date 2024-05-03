@@ -6,15 +6,16 @@ The relationship between reproductive and systemic physiological function has lo
 
 
 ## Methods 
-<br>-Extracted (n=20) brains from Peromyscus eremicus that were either hydrated (free access to water, n=10) or dehydrated (no access to water for 72 hours, n=10). 
+<br>-Extracted (n=20) brains from female (n=10) or male (n=10) Peromyscus eremicus that were either hydrated (free access to water) or dehydrated (no access to water for 72 hours). 
 <br>-Extracted the RNA from each tissue sample (SON, PVN, & pituitary) utilizing a typical Trizol protocol. 
 <br>-Performed library preparation to isolate mRNA of tissue samples and amplify each tissue sample. 
 <br>-Performed bulk RNA sequencing on all tissue samples to observe the gene expression profile of each transcript. 
 <br>-Indexed and mapped samples utilizing the UNH Premise cluster.  
 
 [![](./RNAseq.png)](https://github.com/SarahCouture3599/GenBio_Final_Project/blob/main/RNAseq.png)
+Figure 1. The bulk RNA sequencing pipeline 
 
-
+Raw reads then went through quality control and multiqc platforms, followed by the selection of particular samples following a PCA plot. Samples were then mapped to a reference genome and all visual analysis was compelted in R Studio. The code can be found here: 
 ## Results 
 
 
