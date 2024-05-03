@@ -1,4 +1,3 @@
-#! /bin/sh
 # GenBio_Final_Project
 
 ## Study Background 
@@ -9,4 +8,4 @@
 
 ## Results 
 
-![](./sampletable.png)
+[![](./sampletable.png)](https://github.com/SarahCouture3599/GenBio_Final_Project/blob/main/sampletable.png)
