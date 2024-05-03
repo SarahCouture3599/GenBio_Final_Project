@@ -12,7 +12,7 @@ The relationship between reproductive and systemic physiological function has lo
 -Performed bulk RNA sequencing on all tissue samples to observe the gene expression profile of each transcript. 
 -Indexed and mapped samples utilizing the UNH Premise cluster.  
 
-
+[![](./RNAseq.png)](https://github.com/SarahCouture3599/GenBio_Final_Project/blob/main/RNAseq.png)
 
 
 ## Results 
