@@ -11,4 +11,4 @@
 [![](./sampletable.png)](https://github.com/SarahCouture3599/GenBio_Final_Project/blob/main/sampletable.png)
 
 
-[![](./sampletable.png)]([https://github.com/SarahCouture3599/GenBio_Final_Project/blob/main/plot%231.png]
+[![](./plot%231.png)]([https://github.com/SarahCouture3599/GenBio_Final_Project/blob/main/plot%231.png]
