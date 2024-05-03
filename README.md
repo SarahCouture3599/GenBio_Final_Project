@@ -10,6 +10,7 @@
 
 [![](./sampletable.png)](https://github.com/SarahCouture3599/GenBio_Final_Project/blob/main/sampletable.png)
 
+[![](./PCA.png)]([https://github.com/SarahCouture3599/GenBio_Final_Project/blob/main/PCA.png]
 
 [![](./plot%231.png)]([https://github.com/SarahCouture3599/GenBio_Final_Project/blob/main/plot%231.png]
 
