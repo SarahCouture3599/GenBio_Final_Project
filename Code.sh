@@ -1,5 +1,7 @@
 #! /bin/sh
 
+
+####Premise 
 # raw reads location on Premise 
 /mnt/lz01/macmaneslab/shared/hypothalamus_seq/raw_reads
 
@@ -200,5 +202,113 @@ mv "1642FS_S9_L002_gene.counts" "1642_female_sonpvn_S9_L002_gene.counts"
 
 #running slurm script for mapping ~20 hours 
 sbatch mapping_job.sh /mnt/lz01/macmaneslab/shared/STAR_index/ /mnt/lz01/macmaneslab/shared/hypothalamus_seq/raw_reads ~/RESULTS_DIR/results
+
+
+
+#####RStudio 
+
+#installing packages 
+install.packages(c("tximport", "DESeq2", "dplyr", "foreach", "data.table", "splines", "ggthemes", "scales", "gridExtra", "tidyr", "pheatmap", "RColorBrewer", "ggplot2", "BiocParallel", "apeglm", "tidyverse", "topGO", "GO.db", "beanplot"))
+
+#Loading packages required for analysis 
+if (!require("BiocManager", quietly = TRUE))
+    install.packages("BiocManager")
+
+install(c("EnhancedVolcano", "pasilla", "topGO", "apeglm", "DESeq2"))
+install.packages("gprofiler2")
+
+library(DESeq2)
+library(dplyr)
+library(foreach)
+library(data.table)
+library(splines)
+library(ggthemes)
+library(scales)
+library(gridExtra)
+library(tidyr)
+library(pheatmap)
+library(RColorBrewer)
+library(ggplot2)
+library(apeglm)
+library(tidyverse)
+library(topGO)
+library(GO.db)
+library(readr)
+library(readxl)
+library(lubridate)
+library(patchwork)
+library(EnhancedVolcano)
+library(Cairo)
+library(biomaRt)
+library(plotly)
+library(reutils)
+library(remotes)
+library(GeneTonic)
+library(gprofiler2)
+library(beanplot)
+library(reshape)   
+library(gplots)
+library(pheatmap)
+
+#Loading samples into R
+directory <- "/Users/sarahcouture/Desktop/hypo_seq_countdata"
+sampleFiles <- grep("male",list.files(directory),value=TRUE)
+sampleCondition <- sub("(.*yes).*","\\1",sampleFiles)
+#setting up a df / values for sample table 
+sample=c()
+sample$filename <- as.data.frame(sampleFiles)
+sample$sample <- sampleFiles  %>% gsub(pattern = "_L002.gene.counts", replacement = "")
+sample$sample <- gsub("_S.*", "", sample$sample)
+sample$tissue <- unlist(lapply(strsplit(sample$sample, split = "_"),"[[", 3))
+sample$trt <- unlist(lapply(strsplit(sample$sample, split = "_"),"[[", 4))
+sample$Animal_ID <- unlist(lapply(strsplit(sample$sample, split = "_"),"[[", 1))
+sample$sex <- unlist(lapply(strsplit(sample$sample, split = "_"),"[[", 2))
+#making a sample table 
+sampleTable <- data.frame(sampleName = sample$sample,
+                           fileName = sample$filename,
+                           tissue = sample$tissue,
+                           water = sample$trt,
+                           sex = sample$sex,
+                           Animal_ID = sample$Animal_ID)
+#sampleTable$water<- factor(sampleTable$water)
+sampleTable$sex<- factor(sampleTable$sex)
+sampleTable$tissue<- factor(sampleTable$tissue)
+sampleTable$group <- factor(paste0(sampleTable$tissue, sampleTable$water))
+
+sampleTable
+
+
+![](./sampletable.png) 
+
+
+##DESeq
+ddsHTSeq <- DESeqDataSetFromHTSeqCount(sampleTable = sampleTable,
+                                       directory = directory,
+                                       design= ~ sex + group )
+ddsHTSeq
+
+#Prefiltering 
+smallestGroupSize <- 6
+keep <- rowSums(counts(ddsHTSeq) >= 10) >= smallestGroupSize
+ddsHTSeq <- ddsHTSeq[keep,]
+ddsHTSeq
+
+#basic analysis
+
+ddsHTSeq <- DESeq(ddsHTSeq)
+resbasic <- results(ddsHTSeq)
+summary(resbasic)
+plotMA(resbasic, ylim=c(-4,4))
+
+
+# tissue-wise analysis
+
+#ddsHTSeq_tissue <- ddsHTSeq
+
+#ddsHTSeq_tissue$group <- factor(paste0(ddsHTSeq_tissue$tissue, ddsHTSeq_tissue$water))
+#design(ddsHTSeq_tissue) <- ~ group
+#design(ddsHTSeq_tissue) <- formula(~ group + water)
+#ddsHTSeq_tissue <- DESeq(ddsHTSeq_tissue)
+#esultsNames(ddsHTSeq_tissue)
 
 
