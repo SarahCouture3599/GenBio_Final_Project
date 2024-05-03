@@ -307,6 +307,160 @@ plotMA(resbasic, ylim=c(-4,4))
 #design(ddsHTSeq_tissue) <- ~ group
 #design(ddsHTSeq_tissue) <- formula(~ group + water)
 #ddsHTSeq_tissue <- DESeq(ddsHTSeq_tissue)
-#esultsNames(ddsHTSeq_tissue)
+#resultsNames(ddsHTSeq_tissue)
 
 
+#pca plot
+library(plotly)
+vsd <- varianceStabilizingTransformation(ddsHTSeq, blind = FALSE)
+pcaData <- plotPCA(vsd, intgroup = c("water", "tissue"), returnData = TRUE)
+percentVar <- round(100 * attr(pcaData, "percentVar"))
+
+pca <- ggplot(pcaData, aes(x = PC1, y = PC2, color = water, shape = tissue, name=name)) +
+  geom_point(size = 3, show.legend = TRUE) + 
+  xlab(paste0("PC1: ", percentVar[1], "% variance")) +
+  ylab(paste0("PC2: ", percentVar[2], "% variance")) +
+  coord_fixed() + 
+  theme_bw() +
+  guides(shape = guide_legend(order = 1),color = guide_legend(order = 2)) 
+pca
+ggplotly(pca)
+
+
+#more MA plots for genes up/down regulated in both PVN/SON and pituitary 
+res_pit <- results(ddsHTSeq, contrast=c("group", "pitno", "pityes"), lfcThreshold = 0.1)
+summary(res_pit)
+plotMA(res_pit, ylim=c(-3,3))
+
+down_pit <- filter(as.data.frame(res_pit), log2FoldChange < 0, padj < 0.05)
+up_pit <- filter(as.data.frame(res_pit), log2FoldChange > 0, padj < 0.05)
+
+
+res_sonpvn <- results(ddsHTSeq, contrast=c("group", "sonpvnno", "sonpvnyes"), lfcThreshold = 0.1)
+summary(res_sonpvn)
+plotMA(res_sonpvn, ylim=c(-3,3))
+
+down_sonpvn <- filter(as.data.frame(res_sonpvn), log2FoldChange < 0, padj < 0.05)
+up_sonpvn <- filter(as.data.frame(res_sonpvn), log2FoldChange > 0, padj < 0.05)
+
+
+#Print results
+write.table(res_pit, "DE_pit.tsv", row.names = TRUE, sep = "\t")
+write.table(res_sonpvn, "DE_hypo.tsv", row.names = TRUE, sep = "\t")
+
+
+#Bean plot Pit 
+hypo_counts_df <- as.data.frame(counts(ddsHTSeq, normalized=TRUE))
+write.table(hypo_counts_df, "hypo_counts_df.tsv", row.names = TRUE, sep = "\t")
+
+hypo_counts_df <- read_delim("hypo_counts_df.tsv", 
+    delim = "\t", escape_double = FALSE, 
+    col_types = cols(GeneID = col_character()), 
+    trim_ws = TRUE)
+
+
+beanplotPIT <- function(vals, genenames)
+{
+  gene <- hypo_counts_df[grep(paste("\\b", vals, "\\b", sep=""),hypo_counts_df$GeneID), ]
+  PIT_NF <-  gene %>% select(contains("no")) %>%  select(contains("pit")) %>% select(contains("female")) %>% pivot_longer(everything()) 
+  PIT_YF <-  gene %>% select(contains("yes")) %>%  select(contains("pit")) %>% select(contains("female")) %>% pivot_longer(everything()) 
+  PIT_NM <-  gene %>% select(contains("no")) %>%  select(contains("pit")) %>% select(!contains("female")) %>% pivot_longer(everything())
+  PIT_YM <-  gene %>% select(contains("yes")) %>%  select(contains("pit")) %>% select(!contains("female")) %>% pivot_longer(everything()) 
+  beanplot(log(PIT_NF$value+1),log(PIT_YF$value+1), log(PIT_NM$value+1),log(PIT_YM$value+1), ll = 0, beanlinewd=0,
+           side = "no", xlab="", ylab='logTPM',
+           main = genenames, log="y",
+           col = list("brown","dodgerblue2"),
+           axes=F)
+  points(rep(1, length(PIT_NF$value)), log(PIT_NF$value+1), col='black', pch=15)
+  points(rep(2, length(PIT_YF$value)), log(PIT_YF$value+1), col='black', pch=15)
+  points(rep(4, length(PIT_YM$value)), log(PIT_YM$value+1), col='black', pch=15)
+  points(rep(3, length(PIT_NM$value)), log(PIT_NM$value+1), col='black', pch=15)
+  axis(2)
+  axis(1, at = 1:4, labels = c("F - Dehydrated", "F - Hydrated", "M - Dehydrated", "M - Hydrated"))
+  #arrows(x0 = 1.5, y0 = median(log(NO$value+1)), x1=1.5, y1 = median(log(YES$value+1)), lwd=2, length=.1)
+}
+beanplotPIT("rna-XM_059276299.1" , "Pituitary: MUP4")
+
+
+head(down_pit %>% arrange(log2FoldChange), n=20)
+tail(up_pit %>% arrange(log2FoldChange), n=20)
+
+
+#Bean Plot SON/PVN 
+#hypo_counts_df2 <- as.data.frame(counts(ddsHTSeq, normalized=TRUE))
+#write.table(hypo_counts_df2, "hypo_counts_df2.tsv", row.names = TRUE, sep = "\t")
+
+hypo_counts_df2 <- read_delim("hypo_counts_df2.tsv", 
+    delim = "\t", escape_double = FALSE, 
+    col_types = cols(GeneID = col_character()), 
+    trim_ws = TRUE)
+
+
+beanplotPIT <- function(vals, genenames)
+{
+  gene <- hypo_counts_df2[grep(paste("\\b", vals, "\\b", sep=""),hypo_counts_df2$GeneID), ]
+  SONPVN_NF <-  gene %>% select(contains("no")) %>%  select(contains("sonpvn")) %>% select(contains("female")) %>% pivot_longer(everything()) 
+  SONPVN_YF <-  gene %>% select(contains("yes")) %>%  select(contains("sonpvn")) %>% select(contains("female")) %>% pivot_longer(everything()) 
+  SONPVN_NM <-  gene %>% select(contains("no")) %>%  select(contains("sonpvn")) %>% select(!contains("female")) %>% pivot_longer(everything())
+  SONPVN_YM <-  gene %>% select(contains("yes")) %>%  select(contains("sonpvn")) %>% select(!contains("female")) %>% pivot_longer(everything()) 
+  beanplot(log(SONPVN_NF$value+1),log(SONPVN_YF$value+1), log(SONPVN_NM$value+1),log(SONPVN_YM$value+1), ll = 0, beanlinewd=0,
+           side = "no", xlab="", ylab='logTPM',
+           main = genenames, log="y",
+           col = list("brown","dodgerblue2"),
+           axes=F)
+  points(rep(1, length(SONPVN_NF$value)), log(SONPVN_NF$value+1), col='black', pch=15)
+  points(rep(2, length(SONPVN_YF$value)), log(SONPVN_YF$value+1), col='black', pch=15)
+  points(rep(4, length(SONPVN_YM$value)), log(SONPVN_YM$value+1), col='black', pch=15)
+  points(rep(3, length(SONPVN_NM$value)), log(SONPVN_NM$value+1), col='black', pch=15)
+  axis(2)
+  axis(1, at = 1:4, labels = c("F - Dehydrated", "F - Hydrated", "M - Dehydrated", "M - Hydrated"))
+  #arrows(x0 = 1.5, y0 = median(log(NO$value+1)), x1=1.5, y1 = median(log(YES$value+1)), lwd=2, length=.1)
+}
+beanplotPIT("rna-XM_059276299.1" , "SonPvn: MUP4")
+
+
+head(down_pit %>% arrange(log2FoldChange), n=20)
+tail(up_pit %>% arrange(log2FoldChange), n=20)
+
+
+
+#pheatmap
+#if (!require("BiocManager", quietly = TRUE))
+    install.packages("BiocManager")
+ 
+#BiocManager::install("pheatmap")
+library("pheatmap")
+
+coldata <- read.csv("sampletable.csv",header=TRUE,row.names=1)
+
+coldata$tissue <- factor(coldata$tissue)
+coldata$water <- factor(coldata$water)
+coldata$sex <- factor(coldata$sex)
+coldata$Animal_ID <- factor(coldata$Animal_ID)
+coldata$group <- factor(coldata$group)
+rownames(coldata) <- coldata$sampleName
+
+coldata<-coldata[coldata$sex == 'female', ]
+ 
+coldata <- coldata[order(as.numeric(as.factor(coldata$group))),]
+
+cts <- read.table("hypo_counts_df.tsv",sep="\t",row.names=1,header=TRUE, check.names = FALSE)
+cts <- as.matrix(cts)
+cts <- cts[ ,rownames(coldata)]
+
+dds <- DESeqDataSetFromMatrix(countData = round(cts),
+                              colData = coldata,
+                              design = ~ group)
+dds <- DESeq(dds)
+res <- results(dds)
+ 
+select <- order(rowMeans(counts(dds,normalized=TRUE)), decreasing=TRUE)[1:40]
+
+ntd <- normTransform(dds)
+df <- data.frame(group = colData(dds)[,c("group")], row.names = rownames(colData(dds)))
+ 
+
+pheatmap(assay(ntd)[select,], cluster_rows=FALSE, show_rownames=FALSE,cluster_cols=FALSE, annotation_col=df)
+ 
+
+rownames(cts)[select]
