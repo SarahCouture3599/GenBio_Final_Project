@@ -1,5 +1,5 @@
 # GenBio_Final_Project
-Sarah Couture
+**By Sarah Couture**
 
 ## Study Background 
 
