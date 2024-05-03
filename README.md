@@ -15,7 +15,8 @@ The relationship between reproductive and systemic physiological function has lo
 [![](./RNAseq.png)](https://github.com/SarahCouture3599/GenBio_Final_Project/blob/main/RNAseq.png)
 Figure 1. The bulk RNA sequencing pipeline 
 
-Raw reads then went through quality control and multiqc platforms, followed by the selection of particular samples following a PCA plot. Samples were then mapped to a reference genome and all visual analysis was compelted in R Studio. The code can be found here: 
+Raw reads then went through quality control and multiqc platforms, followed by the selection of particular samples following a PCA plot. Samples were then mapped to a reference genome utilizing the STAR index, and all visual analysis was compelted using the R platform. The code can be found here: https://github.com/SarahCouture3599/GenBio_Final_Project/blob/main/Code.sh
+
 ## Results 
 
 
