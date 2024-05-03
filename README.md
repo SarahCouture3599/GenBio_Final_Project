@@ -27,3 +27,6 @@
 
 
 [![](./Bean%20Plot%20SONPVN.png)]([https://github.com/SarahCouture3599/GenBio_Final_Project/blob/main/Bean%20Plot%20SONPVN.png]
+
+
+[![](./pheatmap.png)]([https://github.com/SarahCouture3599/GenBio_Final_Project/blob/main/pheatmap.png]
