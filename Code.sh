@@ -276,9 +276,7 @@ sampleTable$tissue<- factor(sampleTable$tissue)
 sampleTable$group <- factor(paste0(sampleTable$tissue, sampleTable$water))
 
 sampleTable
-
-
-![](./sampletable.png) 
+ 
 
 
 ##DESeq
