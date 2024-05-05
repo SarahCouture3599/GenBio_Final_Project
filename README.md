@@ -24,28 +24,29 @@ Raw reads then went through quality control and multiqc platforms, followed by t
 
 
 [![](./sampletable.png)](https://github.com/SarahCouture3599/GenBio_Final_Project/blob/main/sampletable.png)
-
+Figure 2. Sample Table showing the head (10) of each individual sample name, the associated gene.count file, the specific tissue extracted, the treatment received (yes water or no water), and sex. 
 
 [![](./PCA.png)]([https://github.com/SarahCouture3599/GenBio_Final_Project/blob/main/PCA.png]
-
+Figure 3. Figure 4. Principal component analysis of gene expression of the pituitary (pit) and hypothalamus (sonpvn) of P. eremicus. The axes are labeled with the proportion of data explained by principal comonent 1 (tissue type) and 2 (water treatment).  
 
 [![](./plot%231.png)]([https://github.com/SarahCouture3599/GenBio_Final_Project/blob/main/plot%231.png]
-
+Figure 4. MA plot showing the differnetial gene expression of pituitary and hypothalamus (sonpvn) in both males and females with or without access to water. The log fold change being on the y axis, and the mean normalized counts on the x axis. 
 
 [![](./MA%20pit%20df.png)]([https://github.com/SarahCouture3599/GenBio_Final_Project/blob/main/MA%20pit%20df.png]
+Figure 5. MA plot showing the differential gene expression of the pituitary in both males and females with or without access to water. The log fold change being on the y axis, and the mean normalized counts on the x axis. 
 
 
 [![](./MA%20SONPVN%20df.png)]([https://github.com/SarahCouture3599/GenBio_Final_Project/blob/main/MA%20SONPVN%20df.png]
-
+Figure 6. MA plot showing the differential gene expression of the hypothalamus (sonpvn) in both males and females with or without access to water. The log fold change being on the y axis, and the mean normalized counts on the x axis. 
 
 [![](./Bean%20Plot%20Pit.png)]([https://github.com/SarahCouture3599/GenBio_Final_Project/blob/main/Bean%20Plot%20Pit.png]
-
+Figure 7. 
 
 [![](./Bean%20Plot%20SONPVN.png)]([https://github.com/SarahCouture3599/GenBio_Final_Project/blob/main/Bean%20Plot%20SONPVN.png]
-
+Figure 8. 
 
 [![](./pheatmap.png)]([https://github.com/SarahCouture3599/GenBio_Final_Project/blob/main/pheatmap.png]
-
+Figure 9. 
 
 
 ## Discussion 
