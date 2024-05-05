@@ -63,10 +63,10 @@ Figure 9. Pheatpmap of the differential gene expression in the pituitary and hyp
 
 ## References 
 <br>1. Heldring N, et al. Estrogen receptors: how do they signal and what are their targets. Physiol Rev. 2007;87(3):905–31. [PubMed] [Google Scholar]
-<br>2. Pfaff DW, et al. Cellular and molecular mechanisms of female reproductive behaviors. In: Knobil E, Neill JD, editors. The Physiology of Reproduction. Raven Press, Ltd; 1994. pp. 107–220. [Google Scholar]
-<br>3. Klinge CM. Estrogen receptor interaction with estrogen response elements. Nucleic Acids Res. 2001;29(14):2905–19. [PMC free article] [PubMed] [Google Scholar]
-<br>4. Marino M, et al. Estrogen signaling multiple pathways to impact gene transcription. Curr Genomics. 2006;7(8):497–508. [PMC free article] [PubMed] [Google Scholar]
-<br>5. Eddy EM, Washburn TF, Bunch DO, Goulding EH, Gladen BC, Lubahn DB, Korach KS. Targeted disruption of the estrogen receptor gene in male mice causes alteration of spermatogenesis and infertility. . Endocrinology. 1996;137:4796–4805. [PubMed] [Google Scholar]
-<br>6. Hess RA, Bunick D, Lee KH, Bahr J, Taylor JA, Korach KS, Lubahn DB. A role for oestrogens in the male reproductive system. . Nature. 1997;390:509–512. [PMC free article] [PubMed] [Google Scholar]
-<br>7. Sladek CD. Estrogen receptors: Their roles in regulation of vasopressin release for maintenance of fluid and electrolyte homeostasis. Neuroendocrinology. 2007. pp. 114-127. (Google Scholar)
+<br>2. Pfaff DW, et al. Cellular and molecular mechanisms of female reproductive behaviors. In: Knobil E, Neill JD, editors. _The Physiology of Reproduction_. Raven Press, Ltd; 1994. pp. 107–220. [Google Scholar]
+<br>3. Klinge CM. Estrogen receptor interaction with estrogen response elements. _Nucleic Acids Res_. 2001;29(14):2905–19. [PMC free article] [PubMed] [Google Scholar]
+<br>4. Marino M, et al. Estrogen signaling multiple pathways to impact gene transcription. _Curr Genomics_. 2006;7(8):497–508. [PMC free article] [PubMed] [Google Scholar]
+<br>5. Eddy EM, Washburn TF, Bunch DO, Goulding EH, Gladen BC, Lubahn DB, Korach KS. Targeted disruption of the estrogen receptor gene in male mice causes alteration of spermatogenesis and infertility. . _Endocrinology_. 1996;137:4796–4805. [PubMed] [Google Scholar]
+<br>6. Hess RA, Bunick D, Lee KH, Bahr J, Taylor JA, Korach KS, Lubahn DB. A role for oestrogens in the male reproductive system. . _Nature_. 1997;390:509–512. [PMC free article] [PubMed] [Google Scholar]
+<br>7. Sladek CD. Estrogen receptors: Their roles in regulation of vasopressin release for maintenance of fluid and electrolyte homeostasis. _Neuroendocrinology_. 2007. pp. 114-127. (Google Scholar)
 
