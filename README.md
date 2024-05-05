@@ -62,7 +62,7 @@ Figure 9. Pheatpmap of the differential gene expression in the pituitary and hyp
 <br>-The National Institutes of Health for their generous funding.
 
 ## References 
-<br>1. Heldring N, et al. Estrogen receptors: how do they signal and what are their targets. Physiol Rev. 2007;87(3):905–31. [PubMed] [Google Scholar]
+<br>1. Heldring N, et al. Estrogen receptors: how do they signal and what are their targets. _Physiol Rev_. 2007;87(3):905–31. [PubMed] [Google Scholar]
 <br>2. Pfaff DW, et al. Cellular and molecular mechanisms of female reproductive behaviors. In: Knobil E, Neill JD, editors. _The Physiology of Reproduction_. Raven Press, Ltd; 1994. pp. 107–220. [Google Scholar]
 <br>3. Klinge CM. Estrogen receptor interaction with estrogen response elements. _Nucleic Acids Res_. 2001;29(14):2905–19. [PMC free article] [PubMed] [Google Scholar]
 <br>4. Marino M, et al. Estrogen signaling multiple pathways to impact gene transcription. _Curr Genomics_. 2006;7(8):497–508. [PMC free article] [PubMed] [Google Scholar]
