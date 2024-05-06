@@ -1,7 +1,9 @@
 # GenBio_Final_Project
 **By Sarah Couture**
 
-## Study Background 
+## Study Introdution & Background 
+As our planet undergoes unprecedented climate change, an estimated 34% increase in the next century of the surface area of arid deserts has been predicted (IPCC, 2019; Mirzabaev et al., 2019; Wu et al., 2014). With this prediction comes the increase importance in studying how environmental implications induce physiological adaptation and overall ecological evolution, leading us on our mission to uncover the mechanisms behind how these desert animals survive (Bittner et al., 2021; Bradford, 59 1974; Cortés et al., 2000; Kordonowy et al., 2017; MacManes, 2017; MacMillen and 60 Hinds, 1983; Nagy, 1987; Tigano et al., 2020). In comes the desert specialist known as the cactus mouse, Peromyscus eremicus, home to southwestern United States and exhibits behavioral (Murie, 1961; Veal and Caire, 1979), physiological (Colella et al., 2021b; Kordonowy et al., 2017; Macmillen, 1965), and molecular (MacManes, 2017) adaptations to desert environments. Due to behavioral changes of desert animals being so dynamic and reversible, focusing on physiological adaptation and how it has occurred across evolutionary scales may be more efficient in answering the big question. For example, previous genomic studies provide evidence of positive selection in desert adapted rodents ranging from genes involved in energy production, to food storage (Jirimutu et al., 2012; Wu et al., 2014), water reabsorption (Giorello et al., 2018; Jirimutu et al., 2012; Marra et al., 2012; Marra et al., 2014; Yang et al., 2016), and osmoregulation (Colella et al., 2021a; Kordonowy and MacManes, 2016; MacManes and Eisen, 2014). However, we still don’t fully comprehend the relationship between reproduction and water regulation.
+
 The relationship between reproductive and systemic physiological function has long been of interest to biologists, though the ways in which function is coordinated remains elusive. One potential mechanism of coordination is the co-regulation of genes important in different functional domains. One specific example, the potential co-regulation of gonadal steroid hormones and vasopressin (AVP) may link reproduction with the maintenance of water and solute balance, both critically important processes in animals. In rats, neuronal expression of vasopressin has been shown to be estrogen dependent, though the relationship between non-neuronal AVP and estrogen is currently unknown. In addition, it has been shown that an increase in non-neuronal AVP gene expression, important for water retention when access to water is limited, decreases sperm counts and motility in male lab mice, and negatively effects embryo development and litter size in female lab mice. To highlight the potential connections between dehydration and fertility in mice accustomed to limited access to drinking water, we have conducted an RNAseq-style gene expression study using a model desert-adapted mammal, the cactus mouse (Peromyscus eremicus), which can survive without water. Using specific nuclei important to the maintenance of water balance (SON and PVN of the hypothalamus) as well as the pituitary, we quantify differences in gene expression in groups of mice exposed to two different water treatments – one where water is freely available and one where water is withheld completely. We use these data to as a first step towards understanding the impacts of dehydration on fertility in a desert-adapted animal. 
 
 
@@ -49,7 +51,9 @@ Figure 9. Pheatpmap of the differential gene expression in the pituitary and hyp
 
 
 ## Discussion 
-
+Water balance is complex and is in part thought to be modulated by reproductive hormones and their associated reproductive receptors found throughout the body. In rats, neuronal expression of vasopressin has been shown to be estrogen dependent, though the relationship between non-neuronal AVP and estrogen is currently unknown. In addition, it has been shown that an increase in non-neuronal AVP gene expression, important for water retention when access to water is limited, decreases sperm counts and motility in male lab mice, and negatively effects embryo development and litter size in female lab mice. Here we expand on the long history of organismal water management studies in desert taxa (Bradford, 1974; MacMillen and Hinds, 1983; Frank, 1988; Hayes et al., 1998; Cortés et al., 2000; Albright et al., 2017; MacManes, 2017) to assess the relationship between reproduction and physiological adaptation to a dry environment. We demonstrate here that there is some sort of connection due to the differences in gene expression in the hypothalamus (sonpvn) and pituitary in female cactus mice versus male cactus mice. These results support the hypothesis that dehydration may impact fertility in female desert-adapted mammals. 
+<br>
+Test
 
 ## Future Directions 
 <br>-Gene ontology term analysis for a more comprehensive view of differential expression.
@@ -59,14 +63,31 @@ Figure 9. Pheatpmap of the differential gene expression in the pituitary and hyp
 ## Acknowledgments 
 <br>-Dr. Matthew MacManes, Sarah Nicholls, Dani Blumstein, Zahra Alim, Disha Hegde, Cassidy O’Brien, and Sahar Jamialahmadi for their help and guidance.
 <br>-The University of New Hampshire Animal Resources Office and Hubbard Genome Center for their support and resources. 
-<br>-The National Institutes of Health for their generous funding.
+<br>-The National Institute of Health for their generous funding.
 
 ## References 
-<br>1. Heldring N, et al. Estrogen receptors: how do they signal and what are their targets. _Physiol Rev_. 2007;87(3):905–31. [PubMed] [Google Scholar]
-<br>2. Pfaff DW, et al. Cellular and molecular mechanisms of female reproductive behaviors. In: Knobil E, Neill JD, editors. _The Physiology of Reproduction_. Raven Press, Ltd; 1994. pp. 107–220. [Google Scholar]
-<br>3. Klinge CM. Estrogen receptor interaction with estrogen response elements. _Nucleic Acids Res_. 2001;29(14):2905–19. [PMC free article] [PubMed] [Google Scholar]
-<br>4. Marino M, et al. Estrogen signaling multiple pathways to impact gene transcription. _Curr Genomics_. 2006;7(8):497–508. [PMC free article] [PubMed] [Google Scholar]
-<br>5. Eddy EM, Washburn TF, Bunch DO, Goulding EH, Gladen BC, Lubahn DB, Korach KS. Targeted disruption of the estrogen receptor gene in male mice causes alteration of spermatogenesis and infertility. . _Endocrinology_. 1996;137:4796–4805. [PubMed] [Google Scholar]
-<br>6. Hess RA, Bunick D, Lee KH, Bahr J, Taylor JA, Korach KS, Lubahn DB. A role for oestrogens in the male reproductive system. . _Nature_. 1997;390:509–512. [PMC free article] [PubMed] [Google Scholar]
-<br>7. Sladek CD. Estrogen receptors: Their roles in regulation of vasopressin release for maintenance of fluid and electrolyte homeostasis. _Neuroendocrinology_. 2007. pp. 114-127. (Google Scholar)
-
+<br>1. **Albright, T. P., Mutiibwa, D., Gerson, A. R., Smith, E. K., Talbot, W. A., O’Neill, J. J., McKechnie, A. E. and Wolf, B. O.** (2017). Mapping evaporative water loss in desert passerines reveals an expanding threat of lethal dehydration._ Proc. Natl. Acad. Sci_. **114**, 2283–2288.
+<br>2. **Bittner, N. K. J., Mack, K. L. and Nachman, M. W.** (2021). Gene expression plasticity and desert adaptation in house mice. Evol. _Int. J. Org. Evol_. **75**, 1477–1491.
+<br>3. **Bradford, D. F.** (1974). Water Stress of Free-Living Peromyscus Truei. _Ecology_ **55**, 1407–1414.
+<br>4. **Colella, J. P., Tigano, A., Dudchenko, O., Omer, A. D., Khan, R., Bochkov, I. D., Aiden, E. L. and MacManes, M. D.** (2021a). Limited Evidence for Parallel Evolution Among Desert-Adapted Peromyscus Deer Mice. _J. Hered_. **112**, 286–302.
+<br>5. **Cortés, A., Rosenmann, M. and Bozinovic, F.** (2000). Water economy in rodents: evaporative water loss and metabolic water production. _Rev. Chil. Hist. Nat_. **73**,.
+<br>6. **Frank, C. L.** (1988). Diet Selection by a Heteromyid Rodent: Role of Net Metabolic Water Production. _Ecology_ **69**, 1943–1951.
+<br>7. **Giorello, F. M., Feijoo, M., D’Elía, G., Naya, D. E., Valdez, L., Opazo, J. C. and Lessa, E. P.** (2018). An association between differential expression and genetic divergence in the Patagonian olive mouse (Abrothrix olivacea). _Mol. Ecol_. **27**, 3274–3286.
+<br>8. **Hayes, J. P., Bible, C. A. and Boone, J. D.** (1998). Repeatability of Mammalian Physiology: Evaporative Water Loss and Oxygen Consumption of Dipodomys merriami. _J. Mammal_. **79**, 475–485.
+<br>9. **Jirimutu, Wang, Z., Ding, G., Chen, G., Sun, Y., Sun, Z., Zhang, H., Wang, L., Hasi, S., Zhang, Y., et al.** (2012). Genome sequences of wild and domestic bactrian camels. _Nat. Commun_. **3**, 1202.
+<br>10. **Kordonowy, L. L. and MacManes, M. D.** (2016). Characterization of a male reproductive transcriptome for Peromyscus eremicus (Cactus mouse). _PeerJ_ **4**, e2617.
+<br>11. **Kordonowy, L., Lombardo, K. D., Green, H. L., Dawson, M. D., Bolton, E. A., LaCourse, S. and MacManes, M. D.** (2017). Physiological and biochemical changes associated with acute experimental dehydration in the desert adapted mouse, Peromyscus eremicus. _Physiol. Rep_. **5**, e13218.
+<br>12. **MacManes, M. D.** (2017). Severe acute dehydration in a desert rodent elicits a transcriptional response that effectively prevents kidney injury. _Ren. Physiol_ **11**.
+<br>13. **MacManes, M. D. and Eisen, M. B.** (2014). Characterization of the transcriptome, nucleotide sequence polymorphism, and natural selection in the desert adapted mouse Peromyscus eremicus. _PeerJ_ **2**, e642.
+<br>14. **Macmillen, R. E.** (1965). Aestivation in the cactus mouse, Peromyscus eremicus. _Comp. Biochem. Physiol_. **16**, 227–248.
+<br>15. **MacMillen, R. E. and Hinds, D. S.** (1983). Water Regulatory Efficiency in Heteromyid Rodents: A Model and Its Application. _Ecology_ **64**, 152–164.
+<br>16. **Marra, N. J., Eo, S. H., Hale, M. C., Waser, P. M. and DeWoody, J. A.** (2012). A priori and a posteriori approaches for finding genes of evolutionary interest in non-model species: Osmoregulatory genes in the kidney transcriptome of the desert rodent Dipodomys spectabilis (banner-tailed kangaroo rat)._Comp. Biochem. Physiol_. _Part D Genomics Proteomics__ **7**, 328–339.
+<br>17. **Marra, N. J., Romero, A. and DeWoody, J. A.** (2014). Natural selection and the genetic basis of osmoregulation in heteromyid rodents as revealed by RNA-seq. _Mol. Ecol_. **23**, 2699–2711.
+<br>18. **Mirzabaev, A., Wu, J., J. Evans, F. García-Oliva, I.A.G. Hussein, M.H. Iqbal, J. Kimutai, T. Knowles, F. Meza, D. Nedjraoui, et al.** (2019). Desertification. In: Climate Change and Land: an IPCC special report on climate change, desertification, land degradation, sustainable land management, food security, and greenhouse gas fluxes in terrestrial ecosystems.
+<br>19. **Murie, M.** (1961). Metabolic Characteristics of Mountain, Desert and Coastal Populations of Perormyscus. _Ecology_ **42**, 723–740.
+<br>20. **Nagy, K. A.** (1987). Field Metabolic Rate and Food Requirement Scaling in Mammals and Birds. _Ecol. Monogr_. **57**, 111–128.
+<br>21. **Tigano, A., Colella, J. P. and MacManes, M. D.** (2020). Comparative and population genomics approaches reveal the basis of adaptation to deserts in a small rodent. _Mol. Ecol_. **29**, 1300–1314.
+<br>22. **Wu, H., Guang, X., Al-Fageeh, M. B., Cao, J., Pan, S., Zhou, H., Zhang, L., Abutarboush, M. H., Xing, Y., Xie, Z., et al**. (2014). Camelid genomes reveal evolution and adaptation to desert environments. _Nat. Commun_. **5**, 1–10. 
+<br>23. **Veal, R. and Caire, W.** (1979). Peromyscus eremicus. _Mamm. Species_ 1–6.
+<br>24. **Colella, J. P., Blumstein, D. M. and MacManes, M. D.** (2021b). Disentangling environmental drivers of circadian metabolism in desert-adapted mice. _J. Exp. Biol_.
+<br>25. **Yang, J., Li, W.-R., Lv, F.-H., He, S.-G., Tian, S.-L., Peng, W.-F., Sun, Y.-W., Zhao, Y.-X., Tu, X.-L., Zhang, M., et al.** (2016). Whole-Genome Sequencing of Native Sheep Provides Insights into Rapid Adaptations to Extreme Environments. _Mol. Biol. Evol_. **33**, 2576– 2592.
