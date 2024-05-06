@@ -52,9 +52,9 @@ Figure 9. Pheatpmap of the differential gene expression in the pituitary and hyp
 
 ## Discussion 
   Water balance is complex and is in part thought to be modulated by reproductive hormones and their associated reproductive receptors found throughout the body. In rats, neuronal expression of vasopressin has been shown to be estrogen dependent, though the relationship between non-neuronal AVP and estrogen is currently unknown. In addition, it has been shown that an increase in non-neuronal AVP gene expression, important for water retention when access to water is limited, decreases sperm counts and motility in male lab mice, and negatively effects embryo development and litter size in female lab mice. Here we expand on the long history of organismal water management studies in desert taxa (Bradford, 1974; MacMillen and Hinds, 1983; Frank, 1988; Hayes et al., 1998; Cortés et al., 2000; Albright et al., 2017; MacManes, 2017) to assess the relationship between reproduction and physiological adaptation to a dry environment. We demonstrate here that there is some sort of connection due to the differences in gene expression in the hypothalamus (sonpvn) and pituitary in female cactus mice versus male cactus mice. These results support the hypothesis that dehydration may impact fertility in female desert-adapted mammals. 
-<br>
+<br>  Seeing if this indented
 <br> _Conclusions_ 
-Desert-adapted species offer a unique opportunity to study how organisms survive some of the harshest habitats on Earth. The main challenges to survival in desert habitats are maintaining water balance and thermoregulation, with the nature of fertility being critically important, particularly to the former.
+<br> Desert-adapted species offer a unique opportunity to study how organisms survive some of the harshest habitats on Earth. The main challenges to survival in desert habitats are maintaining water balance and thermoregulation, with the nature of fertility being critically important, particularly to the former.
 
 ## Future Directions 
 <br>-Gene ontology term analysis for a more comprehensive view of differential expression.
