@@ -40,14 +40,15 @@ Figure 5. MA plot showing the differential gene expression of the pituitary in b
 [![](./MA%20SONPVN%20df.png)]([https://github.com/SarahCouture3599/GenBio_Final_Project/blob/main/MA%20SONPVN%20df.png]
 Figure 6. MA plot showing the differential gene expression of the hypothalamus (sonpvn) in both males and female _P. eremicus_ with or without access to water. The log fold change being on the y axis, and the mean normalized counts on the x axis. 
 
-[![](./Bean%20Plot%20Pit.png)]([https://github.com/SarahCouture3599/GenBio_Final_Project/blob/main/Bean%20Plot%20Pit.png]
+[![](./BeanplotPIT.png)]([https://github.com/SarahCouture3599/GenBio_Final_Project/blob/main/BeanplotPIT.png]
 Figure 7. Bean plot showing the log TPM on y axis, and sex and according treatment (F - Females, M - males, hydrated - with water, dehydrated - no water) on the x axis of MUP4 gene expression in the pituitary. 
 
-[![](./Bean%20Plot%20SONPVN.png)]([https://github.com/SarahCouture3599/GenBio_Final_Project/blob/main/Bean%20Plot%20SONPVN.png]
+[![](./BeanplotSONPVN.png)]([https://github.com/SarahCouture3599/GenBio_Final_Project/blob/main/BeanplotSONPVN.png]
 Figure 8. Bean plot showing the log TPM on y axis, and sex and according treatment (F - Females, M - males, hydrated - with water, dehydrated - no water) on the x axis of MUP4 gene expression in the hypothalamus (sonpvn).
 
 [![](./pheatmap.png)]([https://github.com/SarahCouture3599/GenBio_Final_Project/blob/main/pheatmap.png]
 Figure 9. Pheatpmap of the differential gene expression in the pituitary and hypothalamus (sonpvn) for both hydrated (yes) and dehydrated (no) samples. Genes are on the y axis,  female samples are the on the x axis, and according tissue/treatment is colored-coded on the top. 
+
 
 
 ## Discussion 
