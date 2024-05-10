@@ -439,8 +439,6 @@ coldata$sex <- factor(coldata$sex)
 coldata$Animal_ID <- factor(coldata$Animal_ID)
 coldata$group <- factor(coldata$group)
 rownames(coldata) <- coldata$sampleName
-
-coldata<-coldata[coldata$sex == 'female', ]
  
 coldata <- coldata[order(as.numeric(as.factor(coldata$group))),]
 
@@ -451,6 +449,7 @@ cts <- cts[ ,rownames(coldata)]
 dds <- DESeqDataSetFromMatrix(countData = round(cts),
                               colData = coldata,
                               design = ~ group)
+
 dds <- DESeq(dds)
 res <- results(dds)
  
@@ -464,3 +463,23 @@ pheatmap(assay(ntd)[select,], cluster_rows=FALSE, show_rownames=FALSE,cluster_co
  
 
 rownames(cts)[select]
+
+dds <- DESeqDataSetFromMatrix(countData = round(cts),
+                              colData = coldata,
+                              design = ~ sex + water + tissue + sex:water + tissue:water + sex:tissue)
+
+m1<- model.matrix(~ sex + water + tissue + sex:water + tissue:water + sex:tissue, colData(dds))
+
+
+dds<- DESeq(dds, full=m1, betaPrior = F)
+
+res <- results(dds)
+ 
+select <- order(rowMeans(counts(dds,normalized=TRUE)), decreasing=TRUE)[1:40]
+
+ntd <- normTransform(dds)
+
+df <- data.frame(group = colData(dds)[,c("water" , "tissue", "sex")], row.names = rownames(colData(dds)))
+ 
+
+pheatmap(assay(ntd)[select,], cluster_rows=FALSE, show_rownames=FALSE,cluster_cols=FALSE, annotation_col=df)
